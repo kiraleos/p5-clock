@@ -21,21 +21,21 @@ function draw() {
 	let widthSec = map(clock.sec, 0, 60, 0, width);
 	noStroke();
 
-	/* Hours*/
+	/* Hours Bar*/
 	fill(255, 60, 90);
 	rect(0, 0 * windowHeight / 3, widthHr, height / 3);
 
-	/* Minutes */
+	/* Minutes Bar*/
 	fill(150, 255, 70);
 	rect(0, 1 * windowHeight / 3, widthMin, height / 3);
 
-	/* Seconds */
+	/* Seconds Bar*/
 	fill(70, 50, 255);
 	rect(0, 2 * windowHeight / 3, widthSec, height / 3);
 
 
 	textAlign(CENTER, CENTER);
-	textSize(128);
+	textSize((width >= height) ? width / 15 : height / 15);
 	fill(255, 106, 69);
 	text(clock.toString(), width / 2, height / 2);
 
